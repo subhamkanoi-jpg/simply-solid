@@ -22,7 +22,7 @@ export type Product = {
   tagline: string;
   /** long description for the product page */
   description: string;
-  /** price in whole currency units (e.g. dollars) */
+  /** price in whole currency units (rupees) */
   price: number;
   /** product family, used for filtering later */
   category: "Tops" | "Outerwear" | "Bottoms" | "Accessories";
@@ -34,8 +34,8 @@ export type Product = {
   featured: boolean;
 };
 
-export const CURRENCY = "USD";
-export const CURRENCY_SYMBOL = "$";
+export const CURRENCY = "INR";
+export const CURRENCY_SYMBOL = "₹";
 
 const PRODUCTS: Product[] = [
   {
@@ -44,7 +44,7 @@ const PRODUCTS: Product[] = [
     tagline: "One clean color. Nothing else.",
     description:
       "The foundation of the collection. Heavyweight organic cotton, cut boxy, dyed in a single uninterrupted color. No logos, no seams you'll notice, no compromise.",
-    price: 48,
+    price: 499,
     category: "Tops",
     colors: [
       { name: "Bone", hex: "#e8e3d8" },
@@ -61,7 +61,7 @@ const PRODUCTS: Product[] = [
     tagline: "Weight you can feel. Color you can't ignore.",
     description:
       "A 480gsm loopback fleece hoodie that holds its shape and its color. Built to be the only hoodie you reach for, season after season.",
-    price: 118,
+    price: 599,
     category: "Outerwear",
     colors: [
       { name: "Emerald", hex: "#1f9d6b" },
@@ -77,7 +77,7 @@ const PRODUCTS: Product[] = [
     tagline: "Movement, in a single tone.",
     description:
       "A relaxed wide-leg trouser in a fluid technical crepe. Drapes like it's pouring. One solid color, head to floor.",
-    price: 138,
+    price: 799,
     category: "Bottoms",
     colors: [
       { name: "Terracotta", hex: "#d96c4a" },
@@ -93,7 +93,7 @@ const PRODUCTS: Product[] = [
     tagline: "A solid block, worn open or closed.",
     description:
       "Structured cotton twill overshirt that works as a shirt or a light jacket. Boxy, intentional, and saturated in one decisive color.",
-    price: 158,
+    price: 799,
     category: "Outerwear",
     colors: [
       { name: "Violet", hex: "#8a5cf0" },
@@ -109,7 +109,7 @@ const PRODUCTS: Product[] = [
     tagline: "The final note of color.",
     description:
       "Fine merino rib-knit beanie. Small, but it finishes the look — a single solid color to top everything off.",
-    price: 38,
+    price: 499,
     category: "Accessories",
     colors: [
       { name: "Crimson", hex: "#e23a45" },
@@ -126,7 +126,7 @@ const PRODUCTS: Product[] = [
     tagline: "Stripped further still.",
     description:
       "A ribbed cotton tank in a clean column cut. The most essential layer in the collection, in your choice of solid color.",
-    price: 42,
+    price: 499,
     category: "Tops",
     colors: [
       { name: "Bone", hex: "#e8e3d8" },
