@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/* ============================================================
+   SIMPLY SOLID — design tokens
+   Carried over from the original landing page so the whole
+   store shares one aesthetic. Tweak here, it flows everywhere.
+   ============================================================ */
+@theme {
+  --color-bg: #0a0a0a;
+  --color-ink: #f4f1ea;
+  --color-muted: #8a8a85;
+  --color-line: rgba(244, 241, 234, 0.12);
+  --color-accent: #e8e3d8;
+
+  --font-display: var(--font-syne), "Syne", sans-serif;
+  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
+
+  /* the curated solid colors the brand "flows" through */
+  --color-flow-bone: #e8e3d8;
+  --color-flow-cobalt: #3457d5;
+  --color-flow-crimson: #e23a45;
+  --color-flow-emerald: #1f9d6b;
+  --color-flow-saffron: #f2a93b;
+  --color-flow-violet: #8a5cf0;
+  --color-flow-terracotta: #d96c4a;
+  --color-flow-teal: #1f8a99;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* film-grain overlay for texture (from the original teaser) */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* shared utility classes */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
