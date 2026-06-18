@@ -1,0 +1,54 @@
+; ============================================================
+; DNS Zone File for simplysolid.shop
+; Target host: Vercel
+; Format: BIND (RFC 1035) — standard zone file
+;
+; HOW TO USE
+;  - Cloudflare / Namecheap / AWS Route 53 / Google Domains:
+;      use their "Import zone file" option and upload this file.
+;  - GoDaddy (standard DNS): no zone-file import — enter the
+;      records below by hand in the DNS panel.
+;
+; NOTE: Confirm the A and CNAME values against your Vercel
+;       dashboard (Settings -> Domains). Vercel sometimes gives
+;       a project-specific CNAME target.
+; ============================================================
+
+$ORIGIN simplysolid.shop.
+$TTL 3600
+
+; ----- SOA (Start of Authority) -----
+@   IN  SOA   ns01.domaincontrol.com. dns.simplysolid.shop. (
+            2026061801   ; serial (YYYYMMDDnn)
+            3600         ; refresh (1 hour)
+            600          ; retry   (10 minutes)
+            604800       ; expire  (1 week)
+            3600 )       ; minimum TTL (1 hour)
+
+; ----- Root domain -> Vercel (apex A record) -----
+@           3600    IN  A       216.198.79.1
+
+; ----- www -> Vercel -----
+www         3600    IN  CNAME   cname.vercel-dns.com.
+
+; ============================================================
+; OPTIONAL — uncomment if/when you need them
+; ============================================================
+
+; --- Keep GoDaddy/registrar nameservers (only if NOT using
+;     a different DNS provider). Replace with your actual NS. ---
+; @         3600    IN  NS      ns01.domaincontrol.com.
+; @         3600    IN  NS      ns02.domaincontrol.com.
+
+; --- Email: Google Workspace MX example (edit to your provider) ---
+; @         3600    IN  MX  1   aspmx.l.google.com.
+; @         3600    IN  MX  5   alt1.aspmx.l.google.com.
+; @         3600    IN  MX  5   alt2.aspmx.l.google.com.
+; @         3600    IN  MX  10  alt3.aspmx.l.google.com.
+; @         3600    IN  MX  10  alt4.aspmx.l.google.com.
+
+; --- SPF (prevents spoofing; edit to your mail sender) ---
+; @         3600    IN  TXT     "v=spf1 include:_spf.google.com ~all"
+
+; --- Domain verification placeholder (e.g. Google/Vercel) ---
+; @         3600    IN  TXT     "your-verification-string-here"
